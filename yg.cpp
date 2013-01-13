@@ -72,8 +72,10 @@ int main(int argc, char** argv) {
 	    element=Sr;
 	  } else if (es.compare("Ba")==0) {
 	    element=Ba;
+	  } else if (es.compare("Zn")==0) {
+	    element=Zn;
 	  } else {
-	    cerr << "-e accepts only Mg,Ca,Sr or Ba" << endl;
+	    cerr << "-e accepts only Mg,Ca,Sr, Ba or Zn" << endl;
 	    return 1;
 	  }
 	}
