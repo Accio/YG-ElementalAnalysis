@@ -14,10 +14,11 @@ enum Melement {
   Ca, // assigned 1
   Sr, // assigned 2
   Ba, // assigned 3
+  Zn, // assigned 4
 };
 
-static const string MelementStrings[]={"Mg", "Ca", "Sr", "Ba"};
-static const double MelementMmw[]={24.305, 40.08,87.62, 137.328};
+static const string MelementStrings[]={"Mg", "Ca", "Sr", "Ba", "Zn"};
+static const double MelementMmw[]={24.305, 40.08,87.62, 137.328, 65.382};
 
 class EA {
   double _Mmw, _MFe, _perC, _perH, _perN, _perF;
