@@ -6,6 +6,8 @@
 
 #include "cgi.h"
 
+#define CGIDIR "/home/david/web/cgi-bin/ygEA"
+
 using namespace std;
 
 int random(int mod) {
@@ -50,7 +52,7 @@ int main(int argc, char** argv)
     return(1);
   }
 
-  string comm="/usr/lib/cgi-bin/yg";
+  string comm="/"  CGIDIR "/yg";
 
   cgi.Load();
 
@@ -92,6 +94,7 @@ int main(int argc, char** argv)
    
    comm = "rm -f " + tmpfile;
    system(comm.c_str());
+   cout << "<a href=\"http://david-desktop/cgi-bin/ygEA/yg-cgi\">Crack another sample</a>" << endl;
    cout << "</body>" << endl << "</html>" << endl;
    return(0);
 }
