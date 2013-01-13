@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Elemental Analysis of Fe-M ternary catalysts</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <style type="text/css" media="screen, print, projection">
+      .left {
+      float:left;
+      margin:0px 0px 0px 5px;
+      width:200px;
+      }
+      
+      .right {
+      float:left
+      width:200px;
+      clear:right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Elemental Analysis of Fe-M ternary catalysts</h1>
+    <form method="post" action="yg-cgi">
+      <div class="left">
+	<label for="e">Select M</label>
+      </div>
+      <div class="right">
+        <select name="e">
+	<option value="Mg">Mg</option>
+	<option value="Ca">Ca</option>
+	<option value="Sr">Sr</option>
+	<option value="Ba">Ba</option>
+      </select>
+      </div>
+
+      <div class="left">
+	<label for="r">M:Fe ratio</label>
+      </div>
+      <div class="right">
+	<input type="text" name="r"/>
+      </div>
+
+      <div class="left">
+	<label for="c">C%</label><br/>
+      </div>
+      <div class="right">
+	<input type="text" name="c"/>
+      </div>
+      
+      <div class="left">
+	<label for="h">H%</label><br/>
+      </div>
+      <div class="right">
+	<input type="text" name="h"/>
+      </div> 
+
+      <div class="left">
+	<label for="n">N%</label><br/>
+      </div>
+      <div class="right">
+	<input type="text" name="n"/>
+      </div>
+
+      <div class="left">
+	<label for="f">F%</label><br/>
+      </div>
+      <div class="right">
+	<input type="text" name="f"/>
+      </div>
+
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
