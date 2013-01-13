@@ -1,3 +1,8 @@
+all: yg yg-cgi
+
+install: yg yg-cgi yg-mainpage.html
+	rsync -avz ./yg ./yg-cgi ./yg-mainpage.html -e ssh david@david-desktop:/home/david/web/cgi-bin/ygEA
+
 yg: yg.cpp yg.hpp
 	$(CXX) yg.cpp -o yg -I/usr/local/include/eigen3/ -lboost_program_options
 
