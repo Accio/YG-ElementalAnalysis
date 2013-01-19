@@ -6,15 +6,18 @@ install: yg yg-cgi yg-mainpage.html
 yg: yg.cpp yg.hpp
 	$(CXX) yg.cpp -o yg -I/usr/local/include/eigen3/ -lboost_program_options
 
-yg-cgi: yg-cgi.cpp cgi.h cgi.cpp
-	$(CXX) yg-cgi.cpp cgi.cpp -o yg-cgi  -I/usr/local/include/eigen3/ -lboost_program_options
+yg-cgi: yg-cgi.cpp
+	$(CXX) yg-cgi.cpp -o yg-cgi -lcgicc
 
 testyg: yg.cpp yg
-	@echo "== ./yg  --m 24 --r 1 --c 0.2 --h 1.6 --n 1.2 --f 38.3 =="
-	@./yg  --m 24 --r 1 --c 0.2 --h 1.6 --n 1.2 --f 38.3 ${ARGS}
+	@echo "== ./yg  --e Mg --r 1 --c 0.2 --h 1.6 --n 1.2 --f 38.3 =="
+	@./yg  --e Mg --r 1 --c 0.2 --h 1.6 --n 1.2 --f 38.3 ${ARGS}
+	@echo
+	@echo "== ./yg  --m 24.305 --c 5 --h 1.6 --f 15 #(No Fe)=="
+	@./yg  --nofe --e Mg --c 5 --h 1.6 --f 15 ${ARGS}
 	@echo
 	@echo "== Hard-coded values =="
 	./yg  --test ${ARGS}
 
 clean:
-	rm -f *~ 
+	rm -f *~ core*
