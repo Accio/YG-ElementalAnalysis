@@ -35,7 +35,7 @@ string tempfile() {
 
 string gElement="";
 double gRval=0.0, gCval=0.0, gHval=0.0, gNval=0.0, gFval=0.0;
-bool gHasFe=true;
+bool gHasNoFe=true;
 
 void printForm(const Cgicc& cgi) {
   string mgSel="", caSel="", srSel="", baSel="", znSel="";
@@ -73,14 +73,14 @@ void printForm(const Cgicc& cgi) {
        << "</select></td></tr>" << endl;
 
   // test whether Fe exists
-  gHasFe=cgi.queryCheckbox("hasFe");
+  gHasNoFe=cgi.queryCheckbox("hasNoFe");
 
   cout << "<tr><td>"
-       << "<label for=\"hasFe\">The system has Fe</label>"
+       << "<label for=\"hasNoFe\">The system does <b>NOT</b> contain Fe</label>"
        << "</td>" << endl;
   cout << "<td>"
-       << "<input type=\"checkbox\" name=\"hasFe\" "
-       << (gHasFe ? "checked=\"checked\"" : "") << "/>" 
+       << "<input type=\"checkbox\" name=\"hasNoFe\" "
+       << (gHasNoFe ? "checked=\"checked\"" : "") << "/>" 
        << "</td></tr>" << endl;
 
   // ratio
@@ -159,7 +159,7 @@ void doCalc () {
   string line;
   string tmpfile=tempfile();
   stringstream comms;
-  if(gHasFe) {
+  if(!gHasNoFe) {
     comms << PROG << " --e " << gElement
 	  << " --r " << gRval
 	  <<  " --c " << gCval
