@@ -205,8 +205,10 @@ int main(int argc, char** argv)
     cout << ".left {float:left;margin:0px 0px 0px 5px;width:150px;}" << endl;
     cout << ".right {float:right;width:200px;clear:right;}" << endl;
     cout << "</style>";
+    cout << "<script>";
+    cout << "</script>";
 
-    cout << body().set("bgcolor","#ffffff").set("text","#000000").set("link","#0000ff").set("vlink","#000080") << endl;
+    cout << body().set("bgcolor","#E6E6DC").set("text","#000000").set("link","#0000ff").set("vlink","#000080") << endl;
     cout << h1("Elemental Analysis of Fe-M ternary catalysts") << endl;
     
     cout << br() << endl;
