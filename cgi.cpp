@@ -48,7 +48,8 @@ int CCGIItem::GetLength()
 
 int CCGIItem::GetNameLength()
 {
-	return strlen(m_lpszName);
+  if(m_lpszName == NULL) return(-1);
+  return strlen(m_lpszName);
 }
 
 /************************************************
